@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;700&display=swap');
+
+:root{
+  --md-sys-color-primary: #019898;
+  --md-sys-color-on-primary: #FFFFFF;
+  --md-sys-color-primary-container: #6FF7F6;
+  --md-sys-color-on-primary-container: #002020; 
+  --md-filled-text-field-input-text-color: #161d1d;
+  --md-ref-typeface-brand: 'Poppins';
+  --md-ref-typeface-plain: system-ui;
+  --md-sys-color-secondary-container: #CCE8E7;
+  --md-sys-color-on-secondary-container: #051F1F;
+
+  --md-sys-color-surface-container-highest: #f4f4f4;
+}

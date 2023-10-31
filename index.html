@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login or Sign Up</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="./index.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    </style>
+</head>
+<body class= "bg-[#111827]" style="font-family: 'Poppins', sans-serif;">
+    
+    <div class="container bg-white mt-12 rounded-3xl m-auto max-w-[1180px] h-[85vh] flex items-center justify-between shadow-xl overflow-hidden relative">
+        
+        <div class="form-image w-1/2 flex flex-col items-center h-full justify-center rounded-l-3xl relative bg-[#1f2937] transition-all ease-in-out duration-500 z-10" data-signup="1">
+            <!-- <div class="color-bg absolute rounded-3xl top-0 left-0 bg-[#1f2937] w-full h-full z-0 transition-all ease-in-out duration-500">
+            </div> -->
+            <h3 id="greeting-heading" class="text-2xl font-bold text-center py-2 text-white z-10">Welcome back!</h3>
+            <p id="account-status-text" class="text-center mb-3 text-gray-200 z-10">Not an existing user?</p>
+            <md-elevated-button id="signup-btn" class="mb-6 z-10">Sign Up</md-elevated-button>
+            <img id="signup-image" class="h-96 z-10" src="assets/asset 24.png" alt="">
+        </div>
+
+        <div class="multistep-form translate-y-[-200%] absolute top-0 left-0 w-1/2 h-full flex flex-col items-center justify-evenly transition-all ease-in-out duration-500">
+            <div class="progress-bar w-[60%] flex items-center justify-between relative">
+                <span class="circle flex items-center justify-center w-10 h-10 rounded-full border-[4px] border-[#019898] text-white z-[3] bg-[#019898] transition-all ease duration-300 delay-100">1</span>
+                <span class="circle flex items-center justify-center w-10 h-10 rounded-full border-[4px] border-gray-300 text-gray-500 z-[3] bg-white transition-all ease duration-300 delay-100">2</span>
+                <span class="circle flex items-center justify-center w-10 h-10 rounded-full border-[4px] border-gray-300 text-gray-500 z-[3] bg-white transition-all ease duration-300 delay-100">3</span>
+                <div class="w-full h-1 bg-gray-300 absolute">
+                    <span class="indicator bg-[#019898] h-full absolute transition-all ease duration-500"></span>
+                </div>
+            </div>
+            <div class="error-modal text-center w-[60%] h-max text-red-500 bg-red-100 text-sm px-2 py-3 rounded-3xl hidden">
+                Please verify the entered data
+            </div>
+            <div class="w-full">
+                <h3 class="text-2xl font-bold text-center pb-2">Sign Up</h3>
+                <form id="multistep-form" class="w-full" action="">
+                    <div class="form-step flex flex-col pt-4 mt-2 w-[60%] mx-auto" data-step = "1">
+                        <!-- <label for="name" class=" mt-4">Name</label> -->
+                        <md-filled-text-field type="text" class="name mb-2 mt-2" name="name" label="Name"></md-filled-text-field>
+                        
+                        <!-- <label for="username" class=" mt-4">Username <span><small class="text-red-500">(required*)</small></span></label> -->
+                        <md-filled-text-field type="text" class="username mt-2" name="username" label="Username" required></md-filled-text-field>
+                    </div>
+                    <div class="form-step flex flex-col pt-4 mt-2 w-[60%] mx-auto hidden" data-step = "2">
+                        <!-- <label for="email" class=" mt-4">Email</label> -->
+                        <md-filled-text-field label="Email" type="email" class="email mb-2 mt-2" name="email"></md-filled-text-field>
+                        
+                        <!-- <label for="pwd" class=" mt-4">Password <span><small class="text-red-500">(required*)</small></span></label> -->
+                        <md-filled-text-field label="Password" type="password" class="password mt-2 " name="pwd" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"></md-filled-text-field>
+                        <!-- <small class="pt-2">Must Contain 1 digit (0-9), lowercase, and uppercase letter (Min 8.)</small> -->
+                        
+                    </div>
+                    <div class="form-step flex flex-col pt-4 mt-2 w-[60%] mx-auto hidden" data-step = "3">
+                        <!-- <label for="phone" class=" mt-4">Phone Number</label> -->
+                        <md-filled-text-field label="Phone Number" type="phone" class="email mt-2 mb-2" name="phone" ></md-filled-text-field>
+                        
+                        <!-- <label for="dob" class=" mt-4">DOB</label> -->
+                        <md-filled-text-field label="Date of Birth" type="date" class="password mt-2" name="dob" ></md-filled-text-field>
+                    </div>
+                </form>
+                <div class="btn-container m-auto w-[60%] flex items-center justify-between">
+                    <md-filled-tonal-button id="prev" class="buttons mt-4" disabled>Prev</md-filled-tonal-button>
+                    <md-filled-tonal-button id="next" class="buttons mt-4">Next</md-filled-tonal-button>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-container w-1/2 h-full flex flex-col items-center justify-center transition-all ease-in-out duration-500">
+            <h3 class="text-2xl font-bold text-center py-2">Login</h3>
+            <form id="login-form" action="" class="w-full">
+                <div class="card1">
+                    <div class="form-inputs flex flex-col pt-4 mt-2 w-[60%] mx-auto">
+                        <!-- <label for="email" class=" mt-4">Email <span><small class="email-error-text text-red-600 hidden">(This is required)</small></span></label> -->
+                        <md-outlined-text-field label="Email" id="login-email" type="email" class="email mt-2" name="email" placeholder="name@company.com"></md-outlined-text-field>
+                        
+                        <!-- <label for="pwd" class=" mt-4">Password <span><small class="pwd-error-text text-red-600 hidden">(Invalid Password)</small></span></label> -->
+                        
+                        <md-outlined-text-field label="Password" id="login-pwd" type="password" class="password mt-2" name="pwd" required></md-outlined-text-field>
+
+                        <md-filled-tonal-button id="login-submit-btn" class="buttons mt-4 ">Log In</md-filled-tonal-button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="./bundle.js"></script>
+</body>
+</html>
